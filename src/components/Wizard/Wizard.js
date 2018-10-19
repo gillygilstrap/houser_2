@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
  class Wizard extends Component {
    constructor() {
@@ -18,6 +18,7 @@ import { Link } from 'react-router-dom';
      this.handleCityChange = this.handleCityChange.bind(this)
      this.handleStateChange = this.handleStateChange.bind(this)
      this.handleZipcodeChange = this.handleZipcodeChange.bind(this)
+     this.handleClick = this.handleClick.bind(this)
    }
 
    handleNameChange(e) {
@@ -45,6 +46,14 @@ import { Link } from 'react-router-dom';
      this.setState({
        zipcode: e.target.value
      })
+   }
+
+   handleClick() {
+ 
+    const {name , address, city, state, zipcode} = this.state;
+      axios.post('/houses', {name: name, address: address, city: city, state: state, zipcode: zipcode}).then(res => {
+
+      })
    }
 
 
@@ -78,6 +87,8 @@ import { Link } from 'react-router-dom';
         <h3>Zipcode</h3>
         <input onChange={this.handleZipcodeChange} value={this.state.zipcode} type="text"/>
         </div>
+
+        <Link to="/"><button onClick={this.handleClick}>Complete</button></Link>
 
       </div>
     )

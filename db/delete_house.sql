@@ -1,0 +1,1 @@
+DELETE FROM houses WHERE product_id = $1;
