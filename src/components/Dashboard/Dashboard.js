@@ -38,7 +38,7 @@ import axios from 'axios';
     return (
       <div>
         Dashboard
-        <Link to="/wizard"><button>Add New Propertry</button></Link>
+        <Link to="/wizard/step1"><button>Add New Propertry</button></Link>
         {this.state.houses.map((house,i) => {
           return <House delete={this.handleClick} id={i+1} house={house}/>
         })}
