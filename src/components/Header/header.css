@@ -1,0 +1,25 @@
+.header-main {
+    height: 75px;
+    width: 100%;
+    background: #519872;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.container {
+    height: 75px;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+i {
+    margin-top: -20px;
+}
+
+p {
+    margin-top: 30px;
+    margin-left: 15px;
+}

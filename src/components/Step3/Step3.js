@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { connect } from 'react-redux';
+
 
  class Step3 extends Component {
    constructor() {
      super() 
      this.state = {
-        mortgage: '',
-        rent: '',
-        recRent: '',
+        mortgage: 0,
+        rent: 0
     
      }
 
      this.handleMortgageChange = this.handleMortgageChange.bind(this)
      this.handleRentChange = this.handleRentChange.bind(this)
+     this.handleClick = this.handleClick.bind(this)
   
    }
 
@@ -31,23 +33,25 @@ import axios from 'axios';
  
 
    handleClick() {
- 
-    const {name , address, city, state, zipcode} = this.state;
-      axios.post('/houses', {name: name, address: address, city: city, state: state, zipcode: zipcode}).then(res => {
-
+    const { name, address, city, St, zipcode} = this.props;
+    const { mortgage, rent} = this.state;
+      axios.post('/houses', {name: name, address: address, city: city, state: St, zipcode: zipcode, mortgage: mortgage,
+      rent: rent}).then(res => {
+        console.log('this shit worked')
       })
    }
 
 
   render() {
+    // const {mortgage, rent} = this.state;
+    // const {name , address, city, state, zipcode} = this.props;
     return (
       <div>
-        Wizard
-        <Link to="/"><button>Cancel</button></Link>
-        
+        {/* <Link to="/"><button>Cancel</button></Link> */}
+        <h3>Recommended Rent: ${this.state.mortgage*1.25}</h3>
         <div className="input-group">
         <h3>Monthly Mortgage Ammount</h3>
-        <input onChange={this.handleMortageChange} value={this.state.mortage} type="text"/>
+        <input onChange={this.handleMortgageChange} value={this.state.mortage} type="text"/>
         </div>
         
         <div className="input-group">
@@ -65,5 +69,16 @@ import axios from 'axios';
   }
 }
 
+const mapStateToProps = (state) => {
+  const { name, address, city, St, zipcode} = state
+  return {
+    name,
+    address,
+    city,
+    St, 
+    zipcode
+  }
+}
 
-export default Step3
+
+export default connect(mapStateToProps)(Step3)

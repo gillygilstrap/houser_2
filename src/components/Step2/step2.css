@@ -1,0 +1,17 @@
+.step2-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: start;
+
+}
+
+.input-group-1a {
+    margin-left:  17%;
+    align-content: left;
+}
+
+.input-group-1a h3 {
+    text-align: left;
+}
+

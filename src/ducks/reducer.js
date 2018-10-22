@@ -5,12 +5,13 @@ const initialState = {
     St: '',
     zipcode: '',
     img: '',
-    mortgage: null,
-    rent: null
+    mortgage: 0,
+    rent: 0
 
 }
 
 const UPDATE_HOUSE = "UPDATE_HOUSE";
+const UPDATE_IMG = "UPDATE_IMG";
 
 
 
@@ -21,8 +22,13 @@ function reducer(state = initialState, action) {
     switch( action.type) {
 
         case UPDATE_HOUSE:
+        console.log(action.payload)
         const { name, address, city, St, zipcode} = action.payload
         return Object.assign( {}, state, { name: name, address: address, city: city, St: St, zipcode: zipcode } );
+
+        case UPDATE_IMG:
+        console.log(action.payload)
+        return Object.assign( {}, state, { img: action.payload } );
 
       
         default: return state;
@@ -33,6 +39,7 @@ function reducer(state = initialState, action) {
 
 
 export function updateHouse( name, address, city, St, zipcode ) {
+    console.log('----------BANG!!!!----------', "Function got hit");
     return {
       type: UPDATE_HOUSE,
       payload: {
@@ -45,6 +52,20 @@ export function updateHouse( name, address, city, St, zipcode ) {
          
   }
 }
+export function updateImg( img ) {
+    return {
+      type: UPDATE_IMG,
+      payload: img
+    }
+}
+
+// export function updateImg(img) {
+
+//     return {
+//         type: UPDATE_IMG,
+//         payload: img
+//     }
+// }
 
 
   
@@ -56,12 +77,7 @@ export default reducer;
 
 
 
-// export function updateAddress( address ) {
-//     return {
-//       type: UPDATE_ADDRESS,
-//       payload: address
-//     };
-//   }
+
  
 //   export function updateCity( city ) {
 //     return {

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import { Route } from 'react-router-dom';
 import Step1 from '../Step1/Step1';
 import Step2 from '../Step2/Step2';
 import Step3 from '../Step3/Step3';
+import './wizard.css'
 
  class Wizard extends Component {
    constructor() {
@@ -33,9 +34,11 @@ import Step3 from '../Step3/Step3';
 
   render() {
     return (
-      <div>
-        Wizard
+      <div className="wizard-main">
+        <div className="top-box">
+        <h2>Add New Listing</h2>
         <Link to="/"><button>Cancel</button></Link>
+        </div>
 
         <Route component={ Step1 } path="/wizard/step1" />
         <Route component={ Step2 } path="/wizard/step2" />

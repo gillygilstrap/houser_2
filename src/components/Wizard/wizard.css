@@ -1,0 +1,26 @@
+.wizard-main {
+    width: 50%;
+    height: calc(100vh - 75px);
+    margin: 0 auto;
+    background: #E5F4EC;
+}
+
+.top-box {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+button {
+    font-family: sans-serif;
+    font-weight: 900;
+    background: #FEC2C2;
+    border: none;
+    padding: 10px;
+}

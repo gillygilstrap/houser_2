@@ -1,7 +1,6 @@
 import React from 'react'
 
 function House(props) {
-  console.log('house comp', props)
   return (
     <div>
        Name: {props.house.name}

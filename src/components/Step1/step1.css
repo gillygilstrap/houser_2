@@ -1,0 +1,76 @@
+.step-1 {
+    height: calc(75vh - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+input {
+    height: 18px;
+    outline: 1px solid rgba(71, 71, 71, 0.616);
+    margin-top: -15px;
+}
+
+h3 {
+    margin-left: 15px;
+}
+
+.input-group-1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 17%;
+    text-align: left;
+}
+
+
+.input-group-1 input {
+    width: 200px;
+}
+
+.input-group-2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 17%;
+    text-align: left;
+    margin-top: -20px;
+}
+
+.input-group-2 input {
+    width: 80%;
+}
+
+.three-group {
+    display: flex;
+    margin-left: 17%;
+    justify-content: space-between;
+    width: 70%;
+}
+.three-group h3 {
+    text-align: left;
+    margin-bottom: 10px;
+
+}
+.input-group-3 input {
+   width: 165px;
+}
+.input-group-4 input {
+    width: 70px;
+}
+
+.input-group-5 input {
+    width: 130px;
+}
+
+.travis-was-still-wrong-to-me {
+    background: #3B5249;
+    color: #fff;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 138%;
+}
+.link-box {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;  
+
+}
+
